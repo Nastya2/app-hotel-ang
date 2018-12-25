@@ -10,9 +10,9 @@ export class ImgParsePipe implements PipeTransform {
     let url: string;
     if(namePicture) {
       if(format) {
-        url =  `../assets/` + namePicture + format;
+        url =  `assets/` + namePicture + format;
       } else {
-        url =  `../assets/` + namePicture;
+        url =  `assets/` + namePicture;
       }
       return url;
     }
