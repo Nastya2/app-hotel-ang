@@ -1,0 +1,35 @@
+
+<div class="element-bg-img"><img src="{{ 'mainBg' | imgParse:'.jpg' }}" alt="" class="img-responsive"> </div>
+<div class="element-left-bottom">
+  <div class="ele-strip">
+    <ul>
+      <li><a href="#">Отели</a></li>
+      <!-- <li><a href="#">Fishing</a></li>
+      <li><a href="#">Tours</a></li>
+      <li class="anc-bor"><a href="#">Weather</a></li> -->
+    </ul>
+  </div>
+  <div class="village">
+    <h3>Выберите отель</h3>
+    <span class="line"> </span>
+    <div class="activity_box">
+      <div class="scrollbar" id="style-2">
+        <div class="activity-row" *ngFor="let item of info" (click)="changeInfoHotel(item)">
+          <div class="activity-desc">
+            <h5>Название: {{ item?.title }}</h5>
+            <h5>Адрес: {{ item?.address }}</h5>
+            <p> {{ item?.shortDescription }}</p>
+            <h6>Телефон: {{ item?.phone }}</h6>
+          </div>
+          <div class="activity-img">
+            <ul>
+              <li><img src='{{ item.img1 | imgParse }}'  alt=""></li>
+              <li><img src='{{ item.img2 | imgParse }}'  alt=""></li>
+            </ul>
+          </div>
+          <div class="clear"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

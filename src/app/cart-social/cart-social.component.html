@@ -1,0 +1,17 @@
+<div class="teddy-bear">
+  <div class="teddy-text">
+    <h4>Cоциальная активность</h4>
+    <span class="w-line"> </span>
+    <img src="{{ info?.social_info?.img | imgParse }}" alt=""  class="img-responsive">
+  </div>
+  <div class="teddy-follow">
+    <ul>
+      <li class="folw-h"><h3>{{ info?.social_info?.followers }}</h3>
+        <p>Followers</p>
+      </li>
+      <li><h3>{{ info?.social_info?.following }}</h3>
+        <p>Following</p>
+      </li>
+    </ul>
+  </div>
+</div>
