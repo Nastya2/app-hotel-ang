@@ -74,11 +74,10 @@ h1 {
   display: inline-block;
   padding: 0em 0.5em;
   border-right: 1px solid #fff;
+  color: white;
+  cursor: pointer;
 }
-.ele-strip ul li a{
-  font-size:1em;
-  color: #fff;
-}
+
 /*--teddy-bear--*/
 .teddy-bear {
   text-align: center;
@@ -313,6 +312,8 @@ i.text-info{
 }
 .ele-strip ul li {
   padding: 0em 0.8em;
+  color: white;
+  cursor: pointer;
 }
 .element-right {
   width: 40%;
@@ -320,9 +321,7 @@ i.text-info{
 .element {
   width: 43%;
 }
-.ele-strip ul li {
-  padding: 0em 0.4em;
-}
+
 .teddy-text {
   padding: 1.2em 1em;
 }
@@ -447,9 +446,6 @@ h1 {
 .row.row1.scroll-pane.jspScrollable {
   width: 260px!important;
 }
-.ele-strip ul li a {
-  font-size: 0.9em;
-}
 .top-on1 h4 {
   font-size: 0.84em;
 }
@@ -469,4 +465,8 @@ h1 {
 .activity-desc h6 {
     font-size: 12px;
 }
+}
+
+.activeLink {
+  color: red !important;
 }

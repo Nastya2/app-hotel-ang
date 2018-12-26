@@ -77,7 +77,7 @@ export const widgetData: IData[] = [
         followers: 400,
         following: 2100
     },
-    type: 'resort'
+    type: 'lux'
 }];
 
 export const widgetData$: Observable<IData[]> = of(widgetData);

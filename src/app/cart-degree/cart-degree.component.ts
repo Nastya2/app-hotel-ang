@@ -6,13 +6,9 @@ import { Component, OnInit, Input } from '@angular/core';
   templateUrl: './cart-degree.component.html',
   styleUrls: ['./cart-degree.component.scss']
 })
-export class CartDegreeComponent implements OnInit {
+export class CartDegreeComponent {
 
-  @Input() info: IData;
+  @Input() public info: IData;
 
-  constructor() { }
-
-  ngOnInit() {
-  }
 
 }

@@ -4,9 +4,10 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CartNavComponent } from './cart-nav/cart-nav.component';
-import { ImgParsePipe } from './img-parse.pipe';
+import { ImgParsePipe } from './common/pipes/img-parse/img-parse.pipe';
 import { CartDegreeComponent } from './cart-degree/cart-degree.component';
 import { CartSocialComponent } from './cart-social/cart-social.component';
+import { CartHotelComponent } from './cart-nav/cart-hotel/cart-hotel.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { CartSocialComponent } from './cart-social/cart-social.component';
     CartNavComponent,
     ImgParsePipe,
     CartDegreeComponent,
-    CartSocialComponent
+    CartSocialComponent,
+    CartHotelComponent
   ],
   imports: [
     BrowserModule,
@@ -23,4 +25,4 @@ import { CartSocialComponent } from './cart-social/cart-social.component';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

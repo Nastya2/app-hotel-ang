@@ -8,6 +8,7 @@ import { widgetData$, IData } from './data/data';
   styleUrls: ['./app.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
+
 export class AppComponent {
 
   public info: IData[];
@@ -17,15 +18,15 @@ export class AppComponent {
     this.getData();
   }
 
-private getData() {
-  widgetData$.subscribe((res) => {
-    this.info = res;
-    this.getInfoHotel(res[0]);
-  });
-}
+  private getData() {
+    widgetData$.subscribe((res) => {
+      this.info = res;
+      this.getInfoHotel(res[0]);
+    });
+  }
 
-public getInfoHotel(data) {
-  this.hotel = data;
-}
+  public getInfoHotel(data) {
+    this.hotel = data;
+  }
 
 }

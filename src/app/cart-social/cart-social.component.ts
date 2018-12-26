@@ -6,13 +6,9 @@ import { IData } from '../data/data';
   templateUrl: './cart-social.component.html',
   styleUrls: ['./cart-social.component.scss']
 })
-export class CartSocialComponent implements OnInit {
+export class CartSocialComponent {
 
-  @Input() info:IData;
+  @Input() public info:IData;
 
-  constructor() { }
-
-  ngOnInit() {
-  }
 
 }

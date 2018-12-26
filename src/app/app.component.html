@@ -1,7 +1,7 @@
 <h1>Лучшие отели!</h1>
 <div class="element">
   <div class="element-left">
-    <app-cart-nav [info]="info" (outputInfoHotel)="getInfoHotel($event)"></app-cart-nav>
+    <app-cart-nav [info]="info" (outputInfoHotel)="getInfoHotel($event)" (outputTypeHotel)="getTypeHotel($event)"></app-cart-nav>
   </div>
   <div class="element-right">
     <app-cart-degree [info]="hotel"></app-cart-degree>
