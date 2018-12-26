@@ -2,9 +2,7 @@
 <div class="element-left-bottom">
   <div class="ele-strip">
     <ul>
-      <li (click)="navEnter('all')" [class.activeLink]="typeHotel == 'all'">Все отели</li>
-      <li (click)="navEnter('apartments')" [class.activeLink]="typeHotel == 'apartments'">Аппартаменты</li>
-      <li (click)="navEnter('lux')" [class.activeLink]="typeHotel == 'lux'">Номера Люкс</li>
+      <li *ngFor="let item of menuList" [class.activeLink]="typeHotel == menuEnum[item]" (click)="navClick(item)">{{item}}</li>
     </ul>
   </div>
   <div class="village">
