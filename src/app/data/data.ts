@@ -1,25 +1,5 @@
 import { Observable, of } from 'rxjs';
-import { debounceTime,delay } from 'rxjs/operators';
 
-export interface IData {
-  img1: string;
-  img2: string;
-  title: string;
-  address: string;
-  phone:  number;
-  shortDescription: string;
-  weather: {
-    title: string;
-    water: number;
-    temperature: number
-  };
-  social_info: {
-    img: string;
-    followers: number;
-    following: number;
-  };
-  type: string;
-}
 
 export const widgetData: IData[] = [
 {

@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { IData } from '../data/data';
 
 @Component({
   selector: 'app-cart-social',
@@ -8,7 +7,7 @@ import { IData } from '../data/data';
 })
 export class CartSocialComponent {
 
-  @Input() public info:IData;
+  @Input() public info: ICartSocial;
 
 
 }

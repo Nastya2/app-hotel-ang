@@ -1,4 +1,3 @@
-import { IData } from './../data/data';
 import { Component, OnInit, Input, Output,EventEmitter } from '@angular/core';
 
 

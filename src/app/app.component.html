@@ -4,8 +4,8 @@
     <app-cart-nav [info]="info" (outputInfoHotel)="getInfoHotel($event)" (outputTypeHotel)="getTypeHotel($event)"></app-cart-nav>
   </div>
   <div class="element-right">
-    <app-cart-degree [info]="hotel"></app-cart-degree>
-    <app-cart-social [info]="hotel"></app-cart-social>
+    <app-cart-degree [info]="hotel.weather"></app-cart-degree>
+    <app-cart-social [info]="hotel.social_info"></app-cart-social>
   </div>
   <div class="clear"></div>
 </div>

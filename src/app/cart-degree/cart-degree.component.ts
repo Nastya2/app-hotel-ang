@@ -1,4 +1,3 @@
-import { IData } from './../data/data';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
@@ -8,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class CartDegreeComponent {
 
-  @Input() public info: IData;
+  @Input() public info: ICartDegree;
 
 
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { IData } from 'src/app/data/data';
+
 
 @Component({
   selector: 'app-cart-hotel',

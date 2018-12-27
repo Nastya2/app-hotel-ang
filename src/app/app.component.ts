@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { widgetData$, IData } from './data/data';
+import { widgetData$ } from './data/data';
 
 
 @Component({
