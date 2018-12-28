@@ -7,7 +7,7 @@ export const widgetData: IData[] = [
     img2: 'bg-small1.jpg',
     title: 'BB Marnix',
     address: 'Амстердам - центр города, 1015 ZE Амстердам',
-    phone:  12343234,
+    phone:  '79805556712',
     shortDescription: 'Шикарные панорамные окна с видом на спокойный канал',
     weather: {
       title: 'Погода супер!',
@@ -26,7 +26,7 @@ export const widgetData: IData[] = [
     img2: 'bg-small1.jpg',
     title: 'Leman Locke',
     address: 'ауэр-Хэмлетс, Лондон, E1 8EN, Великобритания ',
-    phone:  375335782623,
+    phone:  '79855436547',
     shortDescription: 'Апартаменты полностью соответствуют фото',
     weather: {
         title: 'Супер!',
@@ -45,7 +45,7 @@ export const widgetData: IData[] = [
     img2: 'bg-small1.jpg',
     title: 'Апартаменты Дом Удачи',
     address: 'Московский проспект 138, кв. 36, Санкт-Петербург, Россия',
-    phone:  375292603405,
+    phone:  '79805436767',
     shortDescription: 'Месторасположение замечательное, ст.метро, остановки общественного транспорта.',
     weather: {
         title: 'Тепло!',

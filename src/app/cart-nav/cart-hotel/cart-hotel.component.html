@@ -3,7 +3,7 @@
     <h5>Название: {{ hotel?.title }}</h5>
     <h5>Адрес: {{  hotel?.address }}</h5>
     <p> {{  hotel?.shortDescription }}</p>
-    <h6>Телефон: {{  hotel?.phone }}</h6>
+    <h6>Телефон: {{  hotel?.phone | phoneParse }}</h6>
   </div>
   <div class="activity-img">
     <ul>

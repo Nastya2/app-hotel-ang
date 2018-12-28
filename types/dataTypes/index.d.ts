@@ -3,7 +3,7 @@
     img2: string;
     title: string;
     address: string;
-    phone:  number;
+    phone:  string;
     shortDescription: string;
     type: string;
     weather: ICartDegree,
