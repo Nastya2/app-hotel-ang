@@ -1,11 +1,11 @@
 import { Component, OnInit, Input, Output,EventEmitter } from '@angular/core';
 
 
-enum MenuEnum {
-  'Все отели' = "all",
-  'Апартаменты' = "apartments",
-  'Номера люкс' = "lux"
-}
+// enum MenuEnum {
+//   'Все отели' = "all",
+//   'Апартаменты' = "apartments",
+//   'Номера люкс' = "lux"
+// }
 
 @Component({
   selector: 'app-cart-nav',
@@ -20,7 +20,7 @@ export class CartNavComponent  {
   public typeHotel: string = '';
   public infoHotels: IData[];
   public menuList:Array<string> = ['Все отели','Апартаменты','Номера люкс'];
-  public menuEnum = MenuEnum;
+  //public menuEnum =  MenuEnum;
 
   ngOnInit() {
     this.navClick('Все отели');
@@ -31,8 +31,8 @@ export class CartNavComponent  {
   }
 
   public navClick(item: string) {
-    this.typeHotel = this.menuEnum[item];
-    if(this.typeHotel== this.menuEnum['Все отели']) {
+    this.typeHotel = MenuEnum[item];
+    if(this.typeHotel == MenuEnum['Все отели']) {
       this.infoHotels = this.info;
     } else {
       this.infoHotels = this.info.filter(res => res.type == this.typeHotel);

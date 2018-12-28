@@ -21,3 +21,14 @@ interface ICartDegree {
     water: number;
     temperature: number;
 }
+
+declare enum MenuEnum {
+    'Все отели' = "all",
+    'Апартаменты' = "apartments",
+    'Номера люкс' = "lux"
+}
+  
+
+
+
+
