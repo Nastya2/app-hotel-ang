@@ -8,7 +8,7 @@ export class ImgParsePipe implements PipeTransform {
 
   transform(namePicture: string, format?: string): string {
     let url: string;
-    if(!namePicture) {
+    if (!namePicture) {
       return;
     }
     format ?  url = `../../../assets/` + namePicture + format : url = `../../../assets/` + namePicture;

@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, OnInit } from '@angular/core';
 import { widgetData$ } from './data/data';
 
 
@@ -9,7 +9,7 @@ import { widgetData$ } from './data/data';
   encapsulation: ViewEncapsulation.None
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit {
 
   public info: IData[];
   public hotel: IData;
@@ -20,6 +20,7 @@ export class AppComponent {
 
   private getData() {
     widgetData$.subscribe((res) => {
+      console.log(res);
       this.info = res;
       this.getInfoHotel(res[0]);
     });
