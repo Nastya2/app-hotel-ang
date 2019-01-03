@@ -1,14 +1,14 @@
-<div class="activity-row" [class.activeHotel]="">
+<div class="activity-row">
   <div class="activity-desc">
-    <h5>Название: {{ hotel?.title }}</h5>
-    <h5>Адрес: {{  hotel?.address }}</h5>
-    <p> {{  hotel?.shortDescription }}</p>
-    <h6>Телефон: {{  hotel?.phone | phoneParse }}</h6>
+    <h5>Название: {{ hotel.title }}</h5>
+    <h5>Адрес: {{  hotel.address }}</h5>
+    <p> {{  hotel.shortDescription }}</p>
+    <h6>Телефон: {{  hotel.phone | phoneParse }}</h6>
   </div>
   <div class="activity-img">
     <ul>
-      <li><img src="{{  hotel.img1 | imgParse }}"  alt="{{ hotel?.title}}"></li>
-      <li><img src="{{  hotel.img2 | imgParse }}"  alt="{{ hotel?.title}}"></li>
+      <li><img src="{{  hotel.img1 | imgParse }}"  alt="{{ hotel.title }}"></li>
+      <li><img src="{{  hotel.img2 | imgParse }}"  alt="{{ hotel.title }}"></li>
     </ul>
   </div>
   <div class="clear"></div>

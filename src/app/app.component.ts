@@ -1,5 +1,6 @@
+import { AppService } from './app.service';
 import { Component, ViewEncapsulation, OnInit } from '@angular/core';
-import { widgetData$ } from './data/data';
+// import { widgetData$ } from './data/data';
 
 
 @Component({
@@ -9,22 +10,12 @@ import { widgetData$ } from './data/data';
   encapsulation: ViewEncapsulation.None
 })
 
-export class AppComponent implements OnInit {
+export class AppComponent  {
 
   public info: IData[];
   public hotel: IData;
 
-  ngOnInit() {
-    this.getData();
-  }
-
-  private getData() {
-    widgetData$.subscribe((res) => {
-      console.log(res);
-      this.info = res;
-      this.getInfoHotel(res[0]);
-    });
-  }
+  constructor() {}
 
   public getInfoHotel(data) {
     this.hotel = data;

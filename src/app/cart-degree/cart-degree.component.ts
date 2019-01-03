@@ -1,3 +1,4 @@
+import { AppService } from './../app.service';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
@@ -5,9 +6,19 @@ import { Component, OnInit, Input } from '@angular/core';
   templateUrl: './cart-degree.component.html',
   styleUrls: ['./cart-degree.component.scss']
 })
-export class CartDegreeComponent {
+export class CartDegreeComponent implements OnInit {
 
-  @Input() public info: ICartDegree;
+  public weather: ICartDegree;
 
+  constructor(private service: AppService) {}
 
+  ngOnInit() {
+    this.getData();
+  }
+
+  private getData(): void {
+    this.service.activeHotel$.subscribe((itemWeather: IData) => {
+      this.weather = itemWeather.weather;
+    });
+  }
 }

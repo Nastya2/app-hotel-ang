@@ -1,11 +1,11 @@
 <h1>Лучшие отели!</h1>
 <div class="element">
   <div class="element-left">
-    <app-cart-nav [info]="info" (outputInfoHotel)="getInfoHotel($event)" (outputTypeHotel)="getTypeHotel($event)"></app-cart-nav>
+    <app-cart-nav (outputInfoHotel)="getInfoHotel($event)"></app-cart-nav>
   </div>
   <div class="element-right">
-    <app-cart-degree [info]="hotel.weather"></app-cart-degree>
-    <app-cart-social [info]="hotel.social_info"></app-cart-social>
+    <app-cart-degree></app-cart-degree>
+    <app-cart-social></app-cart-social> 
   </div>
   <div class="clear"></div>
 </div>

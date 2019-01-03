@@ -1,4 +1,6 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { AppService } from './../app.service';
+import { Component, OnInit, Input } from '@angular/core';
+import { Observable, Subject } from 'rxjs';
 
 enum MenuEnum {
   'Все отели' = 'all',
@@ -12,20 +14,28 @@ enum MenuEnum {
   styleUrls: ['./cart-nav.component.scss'],
 })
 export class CartNavComponent implements OnInit {
-  @Input() public info: IData[];
-  @Output() outputInfoHotel: EventEmitter<IData> = new EventEmitter();
+
+  constructor(private service: AppService) {}
 
   public typeHotel: string;
   public infoHotels: IData[];
+  public info: IData[];
   public menuList: Array<string> = ['Все отели', 'Апартаменты', 'Номера люкс'];
   public MenuEnum = MenuEnum;
 
   ngOnInit() {
-    this.navClick('Все отели');
+    this.getData();
+  }
+
+  private getData(): void {
+    this.service.getData().subscribe((res) => {
+      this.info = res;
+      this.navClick('Все отели');
+    });
   }
 
   public changeInfoHotel(item) {
-    this.outputInfoHotel.emit(item);
+    this.service.activeHotel$.next(item);
   }
 
   public navClick(item: string) {

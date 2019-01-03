@@ -1,3 +1,4 @@
+import { AppService } from './../app.service';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
@@ -5,9 +6,21 @@ import { Component, OnInit, Input } from '@angular/core';
   templateUrl: './cart-social.component.html',
   styleUrls: ['./cart-social.component.scss']
 })
-export class CartSocialComponent {
+export class CartSocialComponent implements OnInit {
 
-  @Input() public info: ICartSocial;
+  public social_info: ICartSocial;
+
+  constructor(private service: AppService) {}
+
+  ngOnInit() {
+    this.getData();
+  }
+
+  private getData(): void {
+    this.service.activeHotel$.subscribe((itemSocial: IData) => {
+      this.social_info = itemSocial.social_info;
+    });
+  }
 
 
 }

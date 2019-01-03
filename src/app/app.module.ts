@@ -1,3 +1,6 @@
+// import { HttpClient, HttpHandler } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
+import { AppService } from './app.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -22,9 +25,10 @@ import { PhoneParsePipe } from './common/pipes/phone-parse/phone-parse.pipe';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ AppService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
