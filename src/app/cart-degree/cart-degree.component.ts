@@ -20,5 +20,6 @@ export class CartDegreeComponent implements OnInit {
     this.service.activeHotel$.subscribe((itemWeather: IData) => {
       this.weather = itemWeather.weather;
     });
+    
   }
 }
