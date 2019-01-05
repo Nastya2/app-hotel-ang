@@ -1,6 +1,5 @@
 import { AppService } from './../app.service';
-import { Component, OnInit, Input } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
 
 enum MenuEnum {
   'Все отели' = 'all',
@@ -17,9 +16,9 @@ export class CartNavComponent implements OnInit {
 
   constructor(private service: AppService) {}
 
-  public typeHotel: string;
-  public infoHotels: IData[];
-  public info: IData[];
+  public typeHotel!: string;
+  public infoHotels!: IData[];
+  public info!: IData[];
   public menuList: Array<string> = ['Все отели', 'Апартаменты', 'Номера люкс'];
   public MenuEnum = MenuEnum;
 

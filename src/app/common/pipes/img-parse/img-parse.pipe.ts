@@ -6,7 +6,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 export class ImgParsePipe implements PipeTransform {
 
-  transform(namePicture: string, format?: string): string {
+  transform(namePicture: string, format?: string): string | undefined {
     let url: string;
     if (!namePicture) {
       return;

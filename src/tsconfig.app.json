@@ -1,7 +1,11 @@
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
-    "outDir": "../out-tsc/app"
+    "outDir": "../out-tsc/app",
+    "strict": true,
+    "noImplicitAny": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true
   },
   "exclude": [
     "test.ts",

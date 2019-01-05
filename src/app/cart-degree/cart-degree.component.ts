@@ -1,5 +1,5 @@
 import { AppService } from './../app.service';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-cart-degree',
@@ -8,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class CartDegreeComponent implements OnInit {
 
-  public weather: ICartDegree;
+  public weather!: ICartDegree;
 
   constructor(private service: AppService) {}
 
@@ -20,6 +20,5 @@ export class CartDegreeComponent implements OnInit {
     this.service.activeHotel$.subscribe((itemWeather: IData) => {
       this.weather = itemWeather.weather;
     });
-    
   }
 }

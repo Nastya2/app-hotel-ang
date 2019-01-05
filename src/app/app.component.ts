@@ -1,7 +1,4 @@
-import { AppService } from './app.service';
-import { Component, ViewEncapsulation, OnInit } from '@angular/core';
-// import { widgetData$ } from './data/data';
-
+import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -12,10 +9,8 @@ import { Component, ViewEncapsulation, OnInit } from '@angular/core';
 
 export class AppComponent  {
 
-  public info: IData[];
-  public hotel: IData;
+  public hotel!: IData;
 
-  constructor() {}
 
   public getInfoHotel(data) {
     this.hotel = data;

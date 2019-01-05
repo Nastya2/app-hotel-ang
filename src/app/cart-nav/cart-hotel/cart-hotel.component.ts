@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 
 @Component({
@@ -8,6 +8,6 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class CartHotelComponent {
 
-  @Input() public hotel: IData;
+  @Input() public hotel!: IData;
 
 }
