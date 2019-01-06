@@ -5,7 +5,8 @@
     "strict": true,
     "noImplicitAny": false,
     "noUnusedLocals": true,
-    "noUnusedParameters": true
+    "noUnusedParameters": true,
+    "experimentalDecorators": true
   },
   "exclude": [
     "test.ts",

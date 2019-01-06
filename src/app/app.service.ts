@@ -6,11 +6,16 @@ import { HttpClient } from '@angular/common/http';
 @Injectable()
 export class AppService {
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+  }
 
   public activeHotel$ = new Subject<IData>();
 
   public getData(): Observable<IData[]> {
     return this.http.get<IData[]>(`assets/data/data.json`);
+  }
+
+  public getVersion(): Observable<any> {
+    return this.http.get(`assets/version/version.json`);
   }
 }

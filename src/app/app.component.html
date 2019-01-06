@@ -1,7 +1,7 @@
-<h1>Лучшие отели!</h1>
+<h1>Лучшие отели! <span *ngIf="version">{{ version.version }}</span></h1>
 <div class="element">
   <div class="element-left">
-    <app-cart-nav (outputInfoHotel)="getInfoHotel($event)"></app-cart-nav>
+    <app-cart-nav></app-cart-nav>
   </div>
   <div class="element-right">
     <app-cart-degree></app-cart-degree>

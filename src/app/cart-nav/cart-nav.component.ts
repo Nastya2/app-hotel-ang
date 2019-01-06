@@ -10,7 +10,7 @@ enum MenuEnum {
 @Component({
   selector: 'app-cart-nav',
   templateUrl: './cart-nav.component.html',
-  styleUrls: ['./cart-nav.component.scss'],
+  styleUrls: ['./cart-nav.component.scss']
 })
 export class CartNavComponent implements OnInit {
 
