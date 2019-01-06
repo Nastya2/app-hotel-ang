@@ -1,7 +1,7 @@
 import { environment } from './../environments/environment';
-import { AppService } from './app.service';
+// import { AppService } from './app.service';
 
-import { Component, ViewEncapsulation, OnInit } from '@angular/core';
+import { Component, ViewEncapsulation, OnInit, Inject } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +14,7 @@ export class AppComponent  implements OnInit {
 
   public version;
 
-  constructor(private service: AppService) {}
+  constructor(@Inject('ServiceInjectString') private service) {}
 
   ngOnInit() {
     if (environment.production) {

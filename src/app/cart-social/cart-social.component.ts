@@ -1,5 +1,5 @@
-import { AppService } from './../app.service';
-import { Component, OnInit } from '@angular/core';
+// import { AppService } from './../app.service';
+import { Component, OnInit, Inject } from '@angular/core';
 
 @Component({
   selector: 'app-cart-social',
@@ -10,7 +10,7 @@ export class CartSocialComponent implements OnInit {
 
   public social_info!: ICartSocial;
 
-  constructor(private service: AppService) {}
+  constructor(@Inject('ServiceInjectString') private service) {}
 
   ngOnInit() {
     this.getData();
@@ -21,6 +21,4 @@ export class CartSocialComponent implements OnInit {
       this.social_info = itemSocial.social_info;
     });
   }
-
-
 }

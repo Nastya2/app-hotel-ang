@@ -1,5 +1,5 @@
-import { AppService } from './../app.service';
-import { Component, OnInit } from '@angular/core';
+// import { AppService } from './../app.service';
+import { Component, OnInit, Inject } from '@angular/core';
 
 @Component({
   selector: 'app-cart-degree',
@@ -10,7 +10,7 @@ export class CartDegreeComponent implements OnInit {
 
   public weather!: ICartDegree;
 
-  constructor(private service: AppService) {}
+  constructor(@Inject('ServiceInjectString') private service) {}
 
   ngOnInit() {
     this.getData();
