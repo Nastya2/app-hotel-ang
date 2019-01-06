@@ -1,5 +1,5 @@
-import { AppService } from './../app.service';
-import { Component, OnInit } from '@angular/core';
+// import { AppService } from './../app.service';
+import { Component, OnInit, Inject } from '@angular/core';
 
 enum MenuEnum {
   'Все отели' = 'all',
@@ -14,7 +14,7 @@ enum MenuEnum {
 })
 export class CartNavComponent implements OnInit {
 
-  constructor(private service: AppService) {}
+  constructor(@Inject('ServiceInjectString') private service) {}
 
   public typeHotel!: string;
   public infoHotels!: IData[];

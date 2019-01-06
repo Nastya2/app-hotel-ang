@@ -8,7 +8,7 @@ import { CommonModule } from '@angular/common';
   imports: [
     CommonModule
   ],
-  providers: [AppService],
+  providers: [{ provide: 'ServiceInjectString', useClass: AppService }],
   exports: [CartDegreeComponent]
 })
 export class NewModule {}
