@@ -2,7 +2,7 @@
 <div class="element-left-bottom">
   <div class="ele-strip">
     <ul>
-      <li *ngFor="let item of menuList" [class.activeLink]="typeHotel == MenuEnum[item]" (click)="navClick(item)">{{item}}</li>
+      <li *ngFor="let item of menuList" [class.activeLink]="item === type" (click)="type = item">{{item}}</li>
     </ul>
   </div>
   <div class="village">
@@ -10,9 +10,14 @@
     <span class="line"> </span>
     <div class="activity_box">
       <div class="scrollbar" id="style-2">
-        <ng-container *ngFor="let hotelItem of infoHotels">
-          <app-cart-hotel [hotel]="hotelItem" (click)="changeInfoHotel(hotelItem)"></app-cart-hotel>
+        <ng-container *ngIf="infoHotels; else loadingTemplate">
+          <ng-container *ngFor="let hotelItem of infoHotels | filterHotel:type">
+            <app-cart-hotel [hotel]="hotelItem" (click)="changeInfoHotel(hotelItem);"></app-cart-hotel>
+          </ng-container>
         </ng-container>
+        <ng-template #loadingTemplate>
+          Загрузка данных ...
+        </ng-template>
       </div>
     </div>
   </div>

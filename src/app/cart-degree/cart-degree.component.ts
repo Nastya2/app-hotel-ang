@@ -1,14 +1,16 @@
 import { AppService } from './../app.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-cart-degree',
   templateUrl: './cart-degree.component.html',
   styleUrls: ['./cart-degree.component.scss']
 })
-export class CartDegreeComponent implements OnInit {
+export class CartDegreeComponent implements OnInit, OnDestroy {
 
-  public weather!: ICartDegree;
+  public weather!: ICartDegree | undefined;
+  private sub!: Subscription;
 
   constructor(private service: AppService) {}
 
@@ -17,8 +19,14 @@ export class CartDegreeComponent implements OnInit {
   }
 
   private getData(): void {
-    this.service.activeHotel$.subscribe((itemWeather: IData) => {
-      this.weather = itemWeather.weather;
+    this.sub = this.service.activeHotel$.subscribe((itemWeather: IData) => {
+      if(itemWeather) {
+        this.weather = itemWeather.weather;
+      }
     });
+  }
+
+  ngOnDestroy() {
+    this.sub.unsubscribe();
   }
 }

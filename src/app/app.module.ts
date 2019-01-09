@@ -12,6 +12,7 @@ import { CartDegreeComponent } from './cart-degree/cart-degree.component';
 import { CartSocialComponent } from './cart-social/cart-social.component';
 import { CartHotelComponent } from './cart-nav/cart-hotel/cart-hotel.component';
 import { PhoneParsePipe } from './common/pipes/phone-parse/phone-parse.pipe';
+import { FilterHotelPipe } from './common/pipes/filter-hotel/filter-hotel.pipe';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { PhoneParsePipe } from './common/pipes/phone-parse/phone-parse.pipe';
     CartDegreeComponent,
     CartSocialComponent,
     CartHotelComponent,
-    PhoneParsePipe
+    PhoneParsePipe,
+    FilterHotelPipe
   ],
   imports: [
     BrowserModule,

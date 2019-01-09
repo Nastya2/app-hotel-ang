@@ -16,7 +16,7 @@
       "followers": 3000000,
       "following": 5444
     },
-    "type": "apartments"
+    "type": "Апартаменты"
 },
 {
     "img1": "bg-small2.jpg",
@@ -35,7 +35,7 @@
         "followers": 780,
         "following": 1520
     },
-    "type": "apartments"
+    "type": "Апартаменты"
 },
 {
     "img1": "bg-small2.jpg",
@@ -54,7 +54,7 @@
         "followers": 400,
         "following": 2100
     },
-    "type": "lux"
+    "type": "Номера люкс"
 }]
 
 

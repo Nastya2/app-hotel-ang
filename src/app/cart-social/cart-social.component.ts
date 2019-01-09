@@ -1,5 +1,6 @@
 import { AppService } from './../app.service';
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-cart-social',
@@ -8,7 +9,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CartSocialComponent implements OnInit {
 
-  public social_info!: ICartSocial;
+  public social_info!: ICartSocial | undefined;
+  private sub!: Subscription;
 
   constructor(private service: AppService) {}
 
@@ -17,10 +19,14 @@ export class CartSocialComponent implements OnInit {
   }
 
   private getData(): void {
-    this.service.activeHotel$.subscribe((itemSocial: IData) => {
-      this.social_info = itemSocial.social_info;
+    this.sub = this.service.activeHotel$.subscribe((itemSocial: IData) => {
+      if(itemSocial) {
+        this.social_info = itemSocial.social_info;
+      }
     });
   }
 
-
+  ngOnDestroy() {
+    this.sub.unsubscribe();
+  }
 }

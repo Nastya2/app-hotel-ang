@@ -1,3 +1,4 @@
+import { environment } from './../../../../environments/environment.prod';
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
@@ -6,12 +7,13 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 export class ImgParsePipe implements PipeTransform {
 
-  transform(namePicture: string, format?: string): string | undefined {
+  transform(namePicture: string, format?: string): string {
     let url: string;
-    if (!namePicture) {
-      return;
+    if(environment.production) {
+      format ?  url = `./assets/` + namePicture + format : url = `./assets/` + namePicture;
+    } else {
+      format ?  url = `./../../../assets/` + namePicture + format : url = `./../../../assets/` + namePicture;
     }
-    format ?  url = `../../../assets/` + namePicture + format : url = `../../../assets/` + namePicture;
     return url;
   }
 }

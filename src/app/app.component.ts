@@ -9,11 +9,4 @@ import { Component, ViewEncapsulation } from '@angular/core';
 
 export class AppComponent  {
 
-  public hotel!: IData;
-
-
-  public getInfoHotel(data) {
-    this.hotel = data;
-  }
-
 }

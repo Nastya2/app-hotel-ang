@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
 
-
 @Component({
   selector: 'app-cart-hotel',
   templateUrl: './cart-hotel.component.html',
