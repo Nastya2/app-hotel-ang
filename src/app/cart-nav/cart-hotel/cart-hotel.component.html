@@ -1,11 +1,11 @@
-<div class="activity-row">
+<div class="activity-row" [style.position] = "'relative'">
   <div class="activity-desc">
     <h5>Название: {{ hotel.title }}</h5>
     <h5>Адрес: {{  hotel.address }}</h5>
-    <p> {{  hotel.shortDescription }}</p>
+    <p [tooltip]="hotel.title" #t="tooltipAs"> {{  hotel.shortDescription }}</p>
     <h6>Телефон: {{  hotel.phone | phoneParse }}</h6>
   </div>
-  <div class="activity-img">
+  <div class="activity-img" (mouseenter)="t.show()" (mouseleave)="t.hide()">
     <ul>
       <li><img src="{{  hotel.img1 | imgParse }}"  alt="{{ hotel.title }}"></li>
       <li><img src="{{  hotel.img2 | imgParse }}"  alt="{{ hotel.title }}"></li>

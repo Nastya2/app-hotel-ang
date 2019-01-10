@@ -13,6 +13,7 @@ import { CartSocialComponent } from './cart-social/cart-social.component';
 import { CartHotelComponent } from './cart-nav/cart-hotel/cart-hotel.component';
 import { PhoneParsePipe } from './common/pipes/phone-parse/phone-parse.pipe';
 import { FilterHotelPipe } from './common/pipes/filter-hotel/filter-hotel.pipe';
+import { TooltipDirective } from './common/directives/tooltip.directive';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { FilterHotelPipe } from './common/pipes/filter-hotel/filter-hotel.pipe';
     CartSocialComponent,
     CartHotelComponent,
     PhoneParsePipe,
-    FilterHotelPipe
+    FilterHotelPipe,
+    TooltipDirective
   ],
   imports: [
     BrowserModule,
