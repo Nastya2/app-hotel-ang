@@ -13,7 +13,8 @@ enum MenuEnum {
 })
 export class CartNavComponent implements OnInit {
 
-  constructor(@Inject('ServiceInjectString') private service) {}
+  constructor(@Inject('ServiceInjectString') private service,
+              @Inject('SizeService') private  sizeService) {}
 
   public typeHotel!: string;
   public infoHotels!: IData[];
@@ -23,6 +24,7 @@ export class CartNavComponent implements OnInit {
 
   ngOnInit() {
     this.getData();
+    this.sizeService.run();
   }
 
   private getData(): void {

@@ -10,6 +10,7 @@ import { CartSocialComponent } from './cart-social/cart-social.component';
 import { CartHotelComponent } from './cart-nav/cart-hotel/cart-hotel.component';
 import { PhoneParsePipe } from './common/pipes/phone-parse/phone-parse.pipe';
 import { NewModule } from './new-module/new-module.module';
+import { ViewportService } from './services/viewport-service.service';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,15 @@ import { NewModule } from './new-module/new-module.module';
     HttpClientModule,
     NewModule
   ],
+  providers: [
+    ViewportService,
+    {
+      provide: 'SizeService',
+      useFactory: (view: ViewportService) => {
+        return view.determineService();
+      },
+      deps: [ViewportService]
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

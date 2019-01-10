@@ -1,4 +1,4 @@
-import { AppService } from './../app.service';
+import { AppService } from '../services/app.service';
 import { CartDegreeComponent } from './../cart-degree/cart-degree.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
