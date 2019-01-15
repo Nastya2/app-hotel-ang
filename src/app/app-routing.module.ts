@@ -1,7 +1,7 @@
 
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LoginComponent } from './content/login/login.component';
+
 import { PageComponent } from './content/page/page.component';
 
 const routes: Routes = [
@@ -11,12 +11,12 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'login',
-    component: LoginComponent
-  },
-  {
     path: 'page',
     component: PageComponent
+  },
+  { 
+    path: 'login',
+    loadChildren: './content/login/login.module#LoginModule'
   },
   {
     path: '**',
@@ -28,4 +28,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

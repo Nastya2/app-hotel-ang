@@ -16,8 +16,6 @@ import { AppComponent } from './app.component';
 
 import { ImgParsePipe } from './common/pipes/img-parse/img-parse.pipe';
 
-
-import { LoginModule } from './content/login/login.module';
 import { TooltipDirective } from './common/directives/tooltip.directive';
 import { PageComponent } from './content/page/page.component';
 
@@ -37,8 +35,7 @@ import { PageComponent } from './content/page/page.component';
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule,
-    LoginModule
+    AppRoutingModule
   ],
   providers: [AppService],
   bootstrap: [AppComponent]
