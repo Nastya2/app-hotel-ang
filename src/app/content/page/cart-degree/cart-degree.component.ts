@@ -1,7 +1,8 @@
 import { AppService } from './../../../app.service';
 
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'app-cart-degree',
@@ -11,7 +12,7 @@ import { Subscription } from 'rxjs';
 export class CartDegreeComponent implements OnInit, OnDestroy {
 
   public weather!: ICartDegree | undefined;
-  private sub!: Subscription;
+  private destroy: Subject<any> = new Subject<any>();
 
   constructor(private service: AppService) {}
 
@@ -20,7 +21,7 @@ export class CartDegreeComponent implements OnInit, OnDestroy {
   }
 
   private getData(): void {
-    this.sub = this.service.activeHotel$.subscribe((itemWeather: IData) => {
+    this.service.getCurrentItem().pipe(takeUntil(this.destroy)).subscribe((itemWeather: IData) => {
       if(itemWeather) {
         this.weather = itemWeather.weather;
       }
@@ -28,6 +29,6 @@ export class CartDegreeComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.sub.unsubscribe();
+    this.destroy.next(null);
   }
 }

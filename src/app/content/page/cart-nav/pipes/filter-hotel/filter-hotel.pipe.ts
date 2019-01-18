@@ -12,16 +12,12 @@ export class FilterHotelPipe implements PipeTransform {
   transform(hotels: IData[], type: string): IData[] {
 
     if(type == 'Все отели') {
-      this.sendActiveHotel(hotels[0]);
+      this.service.setCurrentItem(hotels[0]);
       return hotels;
     } else {
       let filterHotels: IData[] = hotels.filter(res => res.type === type);
-      this.sendActiveHotel(filterHotels[0]);
+      this.service.setCurrentItem(filterHotels[0]);
       return filterHotels;
     }
-  }
-
-  private sendActiveHotel(hotel: IData) {
-    this.service.activeHotel$.next(hotel);
   }
 }

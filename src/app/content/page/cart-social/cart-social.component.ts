@@ -1,7 +1,8 @@
+import { Subject } from 'rxjs';
 import { AppService } from './../../../app.service';
-
 import { Component, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-cart-social',
@@ -11,7 +12,7 @@ import { Subscription } from 'rxjs';
 export class CartSocialComponent implements OnInit {
 
   public social_info!: ICartSocial | undefined;
-  private sub!: Subscription;
+  private destroy: Subject<any> = new Subject<any>();
 
   constructor(private service: AppService) {}
 
@@ -20,7 +21,7 @@ export class CartSocialComponent implements OnInit {
   }
 
   private getData(): void {
-    this.sub = this.service.activeHotel$.subscribe((itemSocial: IData) => {
+    this.service.getCurrentItem().pipe(takeUntil(this.destroy)).subscribe((itemSocial: IData) => {
       if(itemSocial) {
         this.social_info = itemSocial.social_info;
       }
@@ -28,6 +29,6 @@ export class CartSocialComponent implements OnInit {
   }
 
   ngOnDestroy() {
-    this.sub.unsubscribe();
+    this.destroy.next(null);
   }
 }

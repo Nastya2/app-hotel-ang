@@ -1,5 +1,4 @@
 import { AppService } from './../../../app.service';
-
 import { Component, OnInit } from '@angular/core';
 
 
@@ -30,6 +29,6 @@ export class CartNavComponent implements OnInit {
   }
 
   public changeInfoHotel(hotelItem) {
-    this.service.activeHotel$.next(hotelItem);
+    this.service.setCurrentItem(hotelItem);
   }
 }
