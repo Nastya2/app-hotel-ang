@@ -1,0 +1,30 @@
+.cart-hotel-component {
+    position: relative;
+}
+
+.cart-hotel-info {
+    
+    > div {
+        font-size: 15px;
+        color: #111;
+        font-weight: bold;
+
+        > h5,h6 {
+            color: #999;
+            font-size: 14px;
+            display: inline-block;
+        }
+    }
+}
+
+.cart-hotel-img {
+    float: right;
+    width: 25%;
+    ul {
+        display: flex;
+
+        img {
+            border-radius: 50%;
+        }
+    }
+} 

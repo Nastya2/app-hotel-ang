@@ -29,3 +29,37 @@
     </div>
   </div>
 </div>
+
+<div class="cart-nav-component">
+  <div class="cart-nav-img">
+    <img src="{{ 'mainBg' | imgParse:'.jpg' }}">
+  </div>
+  <nav class="cart-nav-menu">
+    <ul class="cart-nav-menu-ul">
+      <li *ngFor="let item of menuList" [title]="item"
+          [class.activeLink]="item === type"
+          (click)="type = item" >{{item}}
+      </li>
+    </ul>
+  </nav>
+  <div class="cart-nav-village">
+    <h3>Выберите отель</h3><hr color="#fda660" size="2">
+    <!-- <span class="line"> </span> -->
+    <div class="activity_box">
+      <div class="scrollbar" id="style-2">
+        <ng-container *ngIf="infoHotels; else loadingTemplate">
+          <ng-container *ngFor="let hotelItem of infoHotels | filterHotel:type">
+            <app-cart-hotel 
+              [hotel]="hotelItem"
+              (click)="changeInfoHotel(hotelItem)" 
+              >
+            </app-cart-hotel>
+          </ng-container>
+        </ng-container>
+        <ng-template #loadingTemplate>
+          Загрузка данных ...
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</div>

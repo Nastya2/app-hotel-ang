@@ -1,15 +1,14 @@
-<div class="activity-row" [style.position] = "'relative'">
-  <div class="activity-desc">
-    <h5>Название: {{ hotel.title }}</h5>
-    <h5>Адрес: {{  hotel.address }}</h5>
-    <p [tooltip]="hotel.title" #t="tooltipAs"> {{  hotel.shortDescription }}</p>
-    <h6>Телефон: {{  hotel.phone | phoneParse }}</h6>
+<div class="cart-hotel-component">
+  <div class="cart-hotel-info">
+    <div>Название: <h5>{{ hotel.title }}</h5></div>
+    <div>Адрес: <h5>{{  hotel.address }}</h5></div>
+    <div class="cart-hotel-img" (mouseenter)="t.show()" (mouseleave)="t.hide()">
+      <ul>
+        <li><img src="{{  hotel.img1 | imgParse }}"  alt="{{ hotel.title }}"></li>
+        <li><img src="{{  hotel.img2 | imgParse }}"  alt="{{ hotel.title }}"></li>
+      </ul>
+    </div>
+    <p [tooltip]="hotel.title" #t="tooltipAs"> {{ hotel.shortDescription }}</p>
+    <div>Телефон:<h6>{{ hotel.phone | phoneParse }}</h6></div>
   </div>
-  <div class="activity-img" (mouseenter)="t.show()" (mouseleave)="t.hide()">
-    <ul>
-      <li><img src="{{  hotel.img1 | imgParse }}"  alt="{{ hotel.title }}"></li>
-      <li><img src="{{  hotel.img2 | imgParse }}"  alt="{{ hotel.title }}"></li>
-    </ul>
-  </div>
-  <div class="clear"></div>
 </div>
