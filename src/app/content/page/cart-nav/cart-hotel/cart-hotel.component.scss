@@ -1,18 +1,27 @@
 .cart-hotel-component {
     position: relative;
+    padding: 5px;
+    line-height: 1.4;
+    border: 1px solid #fda660;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
 }
 
 .cart-hotel-info {
     
     > div {
-        font-size: 15px;
+        font-size: 14px;
         color: #111;
         font-weight: bold;
+        margin-bottom: 5px;
+
+        &:last-child {
+            margin-bottom: 0px;
+        }
 
         > h5,h6 {
             color: #999;
-            font-size: 14px;
-            display: inline-block;
         }
     }
 }
@@ -22,6 +31,7 @@
     width: 25%;
     ul {
         display: flex;
+        justify-content: flex-end;
 
         img {
             border-radius: 50%;

@@ -8,7 +8,7 @@
         <li><img src="{{  hotel.img2 | imgParse }}"  alt="{{ hotel.title }}"></li>
       </ul>
     </div>
-    <p [tooltip]="hotel.title" #t="tooltipAs"> {{ hotel.shortDescription }}</p>
+    <div [tooltip]="hotel.title" #t="tooltipAs">Описание: <h5>{{ hotel.shortDescription }}</h5></div>
     <div>Телефон:<h6>{{ hotel.phone | phoneParse }}</h6></div>
   </div>
 </div>

@@ -61,7 +61,7 @@ h1 {
   font-family: 'Quicksand', sans-serif;
 }
 .element {
-  width: 40%;
+  width: 65%;
   margin: 0 auto 7em;
 }
 .ele-strip {
@@ -509,5 +509,10 @@ h1 {
     border-style:solid;
     border-color:#555;
   }
+}
+
+img {
+  display: block;
+  max-width: 100%;
 }
 
