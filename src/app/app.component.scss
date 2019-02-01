@@ -475,32 +475,26 @@ h1 {
 }
 
 .open {
-  display: block;
+  display: block !important;
 }
 
 .tooltiptext {
   display:none;
-  position:absolute;
-  width:120px;
-  background-color:#555;
-  color:#fff;
-  text-align:center;
-  padding:5px 0;
-  -webkit-border-radius:6px;
-  border-radius:6px;
-  z-index:1;
-  bottom:100%;
-  left:0;
+  background: #404040;
+  padding: 10px 14px;
+  font-size: 14px;
+  color: #fff;
+  border-radius: 3px;
+  position: absolute;
+  bottom: 65px;
 
   &::after {
-    content:"";
-    position:absolute;
-    top:100%;
-    left:50%;
-    margin-left:-5px;
-    border-width:5px;
-    border-style:solid;
-    border-color:#555;
+    content: '';
+    position: absolute;
+    left: 64px;
+    bottom: -11px;
+    border: 6px solid transparent;
+    border-top: 6px solid #404040;
   }
 }
 

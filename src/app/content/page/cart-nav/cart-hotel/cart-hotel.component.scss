@@ -29,9 +29,11 @@
 .cart-hotel-img {
     float: right;
     width: 25%;
+ 
     ul {
         display: flex;
         justify-content: flex-end;
+        position: relative;
 
         img {
             border-radius: 50%;

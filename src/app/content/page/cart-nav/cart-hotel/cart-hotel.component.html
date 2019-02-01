@@ -3,12 +3,12 @@
     <div>Название: <h5>{{ hotel.title }}</h5></div>
     <div>Адрес: <h5>{{  hotel.address }}</h5></div>
     <div class="cart-hotel-img" (mouseenter)="t.show()" (mouseleave)="t.hide()">
-      <ul>
+      <ul [tooltip]="hotel.title" #t="tooltipAs">
         <li><img src="{{  hotel.img1 | imgParse }}"  alt="{{ hotel.title }}"></li>
         <li><img src="{{  hotel.img2 | imgParse }}"  alt="{{ hotel.title }}"></li>
       </ul>
     </div>
-    <div [tooltip]="hotel.title" #t="tooltipAs">Описание: <h5>{{ hotel.shortDescription }}</h5></div>
+    <div>Описание: <h5>{{ hotel.shortDescription }}</h5></div>
     <div>Телефон:<h6>{{ hotel.phone | phoneParse }}</h6></div>
   </div>
 </div>
