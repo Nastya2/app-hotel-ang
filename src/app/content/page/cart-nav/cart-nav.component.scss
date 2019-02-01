@@ -39,7 +39,6 @@
     padding: 10px;
 
     > h3 {
-        font-family: 'Roboto', sans-serif;
         font-size: 14px;
         font-weight: bold;
         text-align: center;
@@ -73,4 +72,15 @@
 
 #scroll::-webkit-scrollbar-thumb {
     background-color:#fda660;
+}
+
+@media screen and (max-width: 1000px) {
+    .cart-nav-menu-ul {
+        flex-direction: column;
+        align-items: center;
+
+        > li {
+            border-right: none;
+        }
+    }
 }

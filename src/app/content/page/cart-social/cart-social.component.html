@@ -1,17 +1,19 @@
-<div class="teddy-bear">
+<div class="social-info">
   <ng-container *ngIf="social_info; else loadingTemplate">
-    <div class="teddy-text">
+    <div class="social-activity">
       <h4>Cоциальная активность</h4>
-      <span class="w-line"> </span>
-      <img src="{{ social_info?.img | imgParse }}" alt=""  class="img-responsive">
+      <hr color="#FFF" size="2">
+      <img src="{{ social_info?.img | imgParse }}" alt="Cоциальная активность" class="img-social">
     </div>
-    <div class="teddy-follow">
-      <ul>
-        <li class="folw-h"><h3>{{ social_info?.followers }}</h3>
-          <p>Followers</p>
+    <div class="social-count">
+      <ul class="social-count-list">
+        <li>
+          <p class="count">{{ social_info?.followers }}</p>
+          <p class="subscriber">Followers</p>
         </li>
-        <li><h3>{{ social_info?.following }}</h3>
-          <p>Following</p>
+        <li>
+          <p class="count">{{ social_info?.following }}</p>
+          <p class="subscriber">Following</p>
         </li>
       </ul>
     </div>
