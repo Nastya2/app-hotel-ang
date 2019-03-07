@@ -473,6 +473,10 @@ h1 {
   color: red !important;
 }
 
+.activeNav {
+  color: #fda660 !important;
+}
+
 .open {
   display: block !important;
 }
@@ -500,5 +504,13 @@ h1 {
 img {
   display: block;
   max-width: 100%;
+}
+
+.navigate {
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
 }
 

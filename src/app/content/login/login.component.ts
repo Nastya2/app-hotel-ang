@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 import {
-	FormBuilder,
-	FormGroup
+  FormBuilder,
+  Validators
 } from '@angular/forms';
 
 @Component({
@@ -10,28 +10,24 @@ import {
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
 
-  public loginForm: FormGroup;
+  public loginForm;
 
-  constructor(private fb: FormBuilder) { }
-
-  ngOnInit() {
-    this.initForms();
-  }
+  constructor(private fb: FormBuilder) {this.initForms();}
 
   private initForms(): void {
 		this.loginForm = this.fb.group({
-			"firstname": "",
+			"firstname": ["",[Validators.required,Validators.minLength(5)]],
 			"lastname": "",
 			"email": "",
-			"password": ""
+      "password": "",
+      "check": ""
 		});
   }
-  
+
   public send() {
     this.loginForm.reset();
-    console.log(this.loginForm.value);
   }
 
 }
