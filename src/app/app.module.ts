@@ -8,7 +8,7 @@ import { CartNavComponent } from './content/page/cart-nav/cart-nav.component';
 import { AppRoutingModule } from './app-routing.module';
 
 import { HttpClientModule } from '@angular/common/http';
-import { AppService } from './app.service';
+import { AppService } from './service/app.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 

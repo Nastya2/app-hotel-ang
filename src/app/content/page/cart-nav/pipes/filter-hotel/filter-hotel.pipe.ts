@@ -1,4 +1,4 @@
-import { AppService } from './../../../../../app.service';
+import { AppService } from '../../../../../service/app.service';
 
 import { Pipe, PipeTransform } from '@angular/core';
 

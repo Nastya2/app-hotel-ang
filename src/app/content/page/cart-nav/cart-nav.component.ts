@@ -1,5 +1,5 @@
-import { AppService } from './../../../app.service';
-import { Component, OnInit, OnChanges } from '@angular/core';
+import { AppService } from '../../../service/app.service';
+import { Component, OnInit } from '@angular/core';
 
 
 @Component({
@@ -7,7 +7,7 @@ import { Component, OnInit, OnChanges } from '@angular/core';
   templateUrl: './cart-nav.component.html',
   styleUrls: ['./cart-nav.component.scss'],
 })
-export class CartNavComponent implements OnInit,OnChanges {
+export class CartNavComponent implements OnInit {
 
   constructor(private service: AppService) {}
 
@@ -19,10 +19,6 @@ export class CartNavComponent implements OnInit,OnChanges {
     setTimeout(() => {
       this.getData();
     },1000)
-  }
-
-  ngOnChanges() {
-    console.log('dkkfkf');
   }
 
   private getData(): void {

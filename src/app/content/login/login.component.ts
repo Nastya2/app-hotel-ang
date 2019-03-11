@@ -10,6 +10,7 @@ import {
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
+
 export class LoginComponent {
 
   public loginForm;
@@ -21,13 +22,16 @@ export class LoginComponent {
 			"firstname": ["",[Validators.required,Validators.minLength(5)]],
 			"lastname": "",
 			"email": "",
-      "password": "",
-      "check": ""
+      "password": ""
 		});
   }
 
   public send() {
     this.loginForm.reset();
+  }
+
+  ngOnInit() {
+    console.dir(this.loginForm);
   }
 
 }
