@@ -1,9 +1,9 @@
 <div class="temperature">
   <ng-container *ngIf="weather; else loadingTemplate">
-    <div class="weather-title">{{weather.title}}</div>
-    <h2>{{weather.temperature}}<sup class="degree">°</sup></h2>
+    <div class="weather-title">{{weather?.title}}</div>
+    <h2>{{weather?.temperature}}<sup class="degree">°</sup></h2>
     <hr color="#FFF" size="2">
-    <h6>Температура воды: {{weather.water}}<sup class="degree">°</sup></h6>
+    <h6>Температура воды: {{weather?.water}}<sup class="degree">°</sup></h6>
   </ng-container>
   <ng-template #loadingTemplate>
     Загрузка данных ...

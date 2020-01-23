@@ -22,7 +22,7 @@ export class CartDegreeComponent implements OnInit, OnDestroy {
 
   private getData(): void {
     this.service.getCurrentItem().pipe(takeUntil(this.destroy)).subscribe((itemWeather: IData) => {
-      if(itemWeather) {
+      if (itemWeather) {
         this.weather = itemWeather.weather;
       }
     });

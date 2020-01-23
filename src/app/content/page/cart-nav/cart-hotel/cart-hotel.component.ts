@@ -9,5 +9,4 @@ export class CartHotelComponent {
 
   @Input() public hotel!: IData;
 
- 
 }

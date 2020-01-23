@@ -1,37 +1,82 @@
-import { Component } from '@angular/core';
-
+import { ErrorsService } from './../errors/errors.service';
+import { Router } from '@angular/router';
+import { AuthStorageService } from './authStorage.service';
 import {
-  FormBuilder,
-  Validators
-} from '@angular/forms';
+  trigger,
+  style,
+  transition,
+  animate
+} from '@angular/animations';
+import { FormBuilder, FormGroup } from '@angular/forms';
+
+import { Component, OnInit } from '@angular/core';
+import { LoginService } from './login.service';
 
 @Component({
   selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  templateUrl: './login.html',
+  styleUrls: ['./login.scss'],
+  animations: [
+    trigger('animForm', [
+      transition(':enter', [
+        style({ opacity: 0 }),
+        animate('150ms', style({ opacity: 1 }))
+      ]),
+      transition(':leave', [
+        style({ opacity: 1 }),
+        animate('150ms', style({ opacity: 0 }))
+      ])
+    ])
+  ]
 })
 
-export class LoginComponent {
+export class LoginComponent implements OnInit {
 
-  public loginForm;
+  public loaded = false;
+  public loginForm!: FormGroup;
 
-  constructor(private fb: FormBuilder) {this.initForms();}
+  constructor(private fb: FormBuilder,
+              private authStorageService: AuthStorageService,
+              private loginService: LoginService,
+              private route: Router,
+              private errorService: ErrorsService)
+              { this.routePage(); }
 
-  private initForms(): void {
-		this.loginForm = this.fb.group({
-			"firstname": ["",[Validators.required,Validators.minLength(5)]],
-			"lastname": "",
-			"email": "",
-      "password": ""
-		});
+  ngOnInit() {
+    this.loaded = true;
+  }
+
+  private createForm(): void {
+    if (!this.loginForm) {
+      this.loginForm = this.fb.group({
+        username: '' ,
+        password: '',
+        ldap: false
+      });
+    } else {
+      return;
+    }
+  }
+
+  private routePage(): void {
+    if (this.authStorageService.checkLogin()) {
+      this.route.navigate(['/pages']);
+    } else {
+      this.createForm();
+    }
   }
 
   public send() {
-    this.loginForm.reset();
-  }
+    this.loginService.auth(this.loginForm.value).subscribe((res: {data: {access_token: string,
+                                                                  expires_on: string, username: string }} & {errors: []} ) => {
+      if (res && res.data) {
+        this.authStorageService.saveInStorage(res.data);
+        this.routePage();
+      }
 
-  ngOnInit() {
-    console.dir(this.loginForm);
+      if (res.errors !== undefined) {
+        this.errorService.setError(res.errors);
+      }
+    });
   }
-
 }

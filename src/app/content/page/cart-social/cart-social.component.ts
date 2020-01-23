@@ -1,6 +1,6 @@
 import { Subject } from 'rxjs';
 import { AppService } from '../../../service/app.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { takeUntil } from 'rxjs/operators';
 
 
@@ -9,7 +9,7 @@ import { takeUntil } from 'rxjs/operators';
   templateUrl: './cart-social.component.html',
   styleUrls: ['./cart-social.component.scss']
 })
-export class CartSocialComponent implements OnInit {
+export class CartSocialComponent implements OnInit, OnDestroy {
 
   public social_info!: ICartSocial | undefined;
   private destroy: Subject<any> = new Subject<any>();
@@ -22,7 +22,7 @@ export class CartSocialComponent implements OnInit {
 
   private getData(): void {
     this.service.getCurrentItem().pipe(takeUntil(this.destroy)).subscribe((itemSocial: IData) => {
-      if(itemSocial) {
+      if (itemSocial) {
         this.social_info = itemSocial.social_info;
       }
     });

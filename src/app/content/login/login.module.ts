@@ -1,23 +1,26 @@
-import { Routes, RouterModule } from '@angular/router';
-import { LoginComponent } from './login.component';
-import { NgModule } from '@angular/core';
+
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './login.component';
+import { LoginService } from './login.service';
+import { MatCheckboxModule } from '@angular/material';
+import { AppRoutingModule } from 'src/app/app-routing.module';
 
 
-const routes: Routes = [
-  {
-    path: '',
-    component: LoginComponent
-  }
-];
 
 @NgModule({
-  declarations: [LoginComponent],
+  declarations: [
+    LoginComponent
+  ],
+  providers: [LoginService],
   imports: [
-    ReactiveFormsModule,
     CommonModule,
-    RouterModule.forChild(routes)
+    ReactiveFormsModule,
+    AppRoutingModule,
+    MatCheckboxModule
   ]
 })
+
+
 export class LoginModule {}

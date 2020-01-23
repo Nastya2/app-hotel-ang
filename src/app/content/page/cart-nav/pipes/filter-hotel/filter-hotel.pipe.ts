@@ -11,11 +11,11 @@ export class FilterHotelPipe implements PipeTransform {
 
   transform(hotels: IData[], type: string): IData[] {
 
-    if(type == 'Все отели') {
+    if (type === 'Все отели') {
       this.service.setCurrentItem(hotels[0]);
       return hotels;
     } else {
-      let filterHotels: IData[] = hotels.filter(res => res.type === type);
+      const filterHotels: IData[] = hotels.filter(res => res.type === type);
       this.service.setCurrentItem(filterHotels[0]);
       return filterHotels;
     }

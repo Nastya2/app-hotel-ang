@@ -1,3 +1,4 @@
+import { LoginComponent } from './content/login/login.component';
 
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -6,22 +7,22 @@ import { PageComponent } from './content/page/page.component';
 
 const routes: Routes = [
   {
-    path:'',
-    redirectTo: 'page',
+    path: '',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
   {
     path: 'page',
     component: PageComponent
   },
-  { 
+  {
     path: 'login',
-    loadChildren: './content/login/login.module#LoginModule'
+    component: LoginComponent
   },
   {
     path: '**',
-    redirectTo: 'page'
-  }
+    redirectTo: 'login'
+  },
 ];
 
 @NgModule({

@@ -11,14 +11,12 @@ export class CartNavComponent implements OnInit {
 
   constructor(private service: AppService) {}
 
-  public type:string = 'Все отели';
+  public type = 'Все отели';
   public infoHotels!: IData[];
   public menuList: Array<string> = ['Все отели', 'Апартаменты', 'Номера люкс'];
 
   ngOnInit() {
-    setTimeout(() => {
-      this.getData();
-    },1000)
+    this.getData();
   }
 
   private getData(): void {
