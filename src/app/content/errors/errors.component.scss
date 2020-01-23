@@ -12,7 +12,7 @@
     font-size: 13px;
     background-color: rgba(#F4493C, 0.9);
     padding: 15px;
-    margin-top: 3px;
+    margin-top: 5px;
     margin-bottom: 3px;
     text-align: center;
     color: white;
@@ -31,9 +31,9 @@
     cursor: pointer;
     transition: color 200ms;
     padding: 0;
-    margin: 0;
+    margin: 0px;
 
-    > fa-icon {
+    > span {
         cursor: pointer;
         font-size: 14px;
         transition: color 200ms;
